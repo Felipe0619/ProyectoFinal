@@ -1,28 +1,27 @@
 @extends('admin.layout.app')
 
-
 @section('content')
-<div class="container">
+    <div class="container">
 
-    <div class="row justify-content-center">
+        <div class="row justify-content-center">
 
-        <div class="col-md-8">
+            <div class="col-md-8">
 
-            <div class="card">
+                <div class="card border-0 shadow rounded-4">
 
-                <div class="card-header bg-secondary text-white">Crear Producto</div>
+                    <div class="card-header bg-success text-white">Crear Producto</div> <!-- Cambiado a bg-success -->
 
+                    <div class="card-body">
 
+                        <form action="{{ url('product') }}" method="POST" enctype="multipart/form-data">
 
-                <div class="card-body">
+                            @csrf
 
-                    <form action="{{ url('product') }}" method="POST" enctype="multipart/form-data">
+                            @include('admin.product.form.form')
 
-                        @csrf
-                        
-                        @include('admin.product.form.form')
+                        </form>
 
-                    </form>
+                    </div>
 
                 </div>
 
@@ -31,6 +30,4 @@
         </div>
 
     </div>
-
-</div>
 @endsection
